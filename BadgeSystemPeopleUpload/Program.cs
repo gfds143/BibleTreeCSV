@@ -6,7 +6,17 @@ namespace BadgeSystemPeopleUpload
 {
     class Program
     {
+<<<<<<< HEAD
         static string[] adminUsers = { "Gage Ervin", "Aaron Holmes", "Tyler Kerr", "Ante Susic", "Chance Turner", "Andy Harbert" };
+=======
+        const string CONNECTION_STRING =
+                @"Data Source=.;" +
+
+            // added this comment to test merge on github
+                    //@"Data Source=.\SQLEXPRESS;" +
+                    "Initial Catalog=Sales;Integrated Security=True;Connect Timeout=15;" +
+                    "Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+>>>>>>> refs/remotes/origin/master
 
         static void Main(string[] args)
         {

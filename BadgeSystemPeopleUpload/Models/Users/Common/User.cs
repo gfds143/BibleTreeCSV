@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using Dapper.Contrib.Extensions;
-using Newtonsoft.Json;
 
 namespace BibleTree.Models
 {
@@ -14,7 +12,7 @@ namespace BibleTree.Models
 
         public string user_token { get; set; }
 
-		[Key] public long user_id { get; set; }
+		public long user_id { get; set; }
 
 	    public char user_type { get; set; }
 

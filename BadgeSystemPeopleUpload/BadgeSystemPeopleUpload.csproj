@@ -67,6 +67,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="SourceFiles\BadgeSystemPeople.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Services\SQL\Administrator_GetAll.sql" />

@@ -14,7 +14,7 @@ namespace BadgeSystemPeopleUpload
         const string CONNECTION_STRING =
                 @"Data Source=.;" +
 
-                    // TODO remove this line to fix the data source
+            // added this comment to test merge on github
                     //@"Data Source=.\SQLEXPRESS;" +
                     "Initial Catalog=Sales;Integrated Security=True;Connect Timeout=15;" +
                     "Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";

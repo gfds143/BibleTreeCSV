@@ -11,13 +11,7 @@ namespace BadgeSystemPeopleUpload
 {
     class Program
     {
-        const string CONNECTION_STRING =
-                @"Data Source=.;" +
 
-                    // TODO remove this line to fix the data source
-                    //@"Data Source=.\SQLEXPRESS;" +
-                    "Initial Catalog=Sales;Integrated Security=True;Connect Timeout=15;" +
-                    "Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         static void Main(string[] args)
         {
@@ -25,44 +19,31 @@ namespace BadgeSystemPeopleUpload
             Console.WriteLine("Input file path.");
             string filePath = Console.ReadLine();
 
-            List<Person> people = ReadFile(filePath);
+            //List<Person> people = ReadFile(filePath);
 
-            upload(people);
+            // insert the person into the database
         }
 
-        static List<Person> ReadFile(string filePath)
-        {
-            List<Person> people = new List<Person>();
+        //static List<Person> ReadFile(string filePath)
+        //{
+        //    List<Person> people = new List<Person>();
 
-            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+        //    System.IO.StreamReader file = new System.IO.StreamReader(filePath);
 
-            string line;
-            while((line = file.ReadLine()) != null)
-            {
-                string[] items = line.Split(',');
+        //    string line;
+        //    while((line = file.ReadLine()) != null)
+        //    {
+        //        string[] items = line.Split(',');
 
-                Person temp = new Person(items[0], items[1]);
+        //        Person temp = new Person(items[0], items[1]);
 
-                people.Add(temp);
-            }
+        //        people.Add(temp);
+        //    }
 
-            file.Close();
+        //    file.Close();
 
-            return people;
-        }
+        //    return people;
+        //}
 
-        static void upload(List<Person> people)
-        {
-            using (IDbConnection db = new SqlConnection(CONNECTION_STRING))
-            {
-                //var temp = InsertSQL();
-
-                foreach (Person p in people)
-                {
-                    //db.Execute(InsertSQL(), p);
-                }
-
-            }
-        }
     }
 }

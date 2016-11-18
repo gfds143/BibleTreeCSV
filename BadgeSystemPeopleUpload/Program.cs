@@ -62,6 +62,8 @@ namespace BadgeSystemPeopleUpload
 
             BibleTree.Services.SQLService db = new BibleTree.Services.SQLService();
 
+            //db.Rebuild();
+
             foreach (Student item in students)
             {
                 db.AddStudent(item);

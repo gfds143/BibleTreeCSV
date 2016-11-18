@@ -16,8 +16,8 @@ namespace BibleTree.Services {
 		 *     Primary Database Handling
 		 */
 		#region Connection
-		private readonly string _connectionString = @"Data Source=.;Initial Catalog=BibleTree;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-		private readonly string _noDatabaseConnection = @"Data Source=.;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+		private readonly string _connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=BibleTree;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+		private readonly string _noDatabaseConnection = @"Data Source=.\SQLEXPRESS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 		private IDbConnection connect() => new SqlConnection(_connectionString);
 
@@ -45,7 +45,8 @@ namespace BibleTree.Services {
 		}
 		public void Drop() {
 			using (var db = noDatabaseConnect()) {
-				db.Execute(ScriptService.Scripts["database_drop"]);
+                //db.Execute(ScriptService.Scripts["database_drop"]);
+                ScriptService.Execute(db, "database_drop");
 			}
 		}
 		public void Create() {

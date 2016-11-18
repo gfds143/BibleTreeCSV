@@ -4,7 +4,7 @@ GO
 CREATE TABLE [BibleTree].[dbo].[user] 
 ( 
 	[user_id] int PRIMARY KEY IDENTITY(1,1) NOT NULL, 
-	[user_email] varchar(32) NOT NULL, 
+	[user_email] varchar(64) NOT NULL, 
 	[user_name] varchar(64) NOT NULL, 
 	[user_token] varchar(255), 
 	[user_type] char 

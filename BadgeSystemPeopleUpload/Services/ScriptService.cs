@@ -23,14 +23,16 @@ namespace BibleTree.Services {
 
             string script = null;
 
-            if (name.ToLower() == "administrator_insert")
-            {
-                script = File.ReadAllText(@"..\..\Services\SQL\Administrator_Insert.sql");
-            }
-            else if (name.ToLower() == "student_insert")
-            {
-                script = File.ReadAllText(@"..\..\Services\SQL\Student_Insert.sql");
-            }
+            script = File.ReadAllText(@"..\..\Services\SQL\" + name + ".sql");
+
+            //if (name.ToLower() == "administrator_insert")
+            //{
+            //    script = File.ReadAllText(@"..\..\Services\SQL\Administrator_Insert.sql");
+            //}
+            //else if (name.ToLower() == "student_insert")
+            //{
+            //    script = File.ReadAllText(@"..\..\Services\SQL\Student_Insert.sql");
+            //}
 
             if (script != null) {
 				List<string> commands = Regex.Split(script, @"^\s*GO\s*$",

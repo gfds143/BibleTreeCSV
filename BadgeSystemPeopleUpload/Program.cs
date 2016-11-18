@@ -47,7 +47,7 @@ namespace BadgeSystemPeopleUpload
                     tempStu.user_type = 's';
                     tempStu.user_token = "Unused";
 
-                    //tempStu.student_id = students.Count;   ??? what is student ID and why is it a string
+                    tempStu.student_id = ""; //students.Count;   //??? what is student ID and why is it a string
                     tempStu.student_dateEnrolled = enrollDate;
                     tempStu.student_dateGraduated = graduateDate;
 
@@ -57,6 +57,20 @@ namespace BadgeSystemPeopleUpload
             }
 
             // insert the person into the database
+
+            string filePath5 = AppDomain.CurrentDomain.BaseDirectory + @"..\..\Services\SQL\";
+
+            BibleTree.Services.SQLService db = new BibleTree.Services.SQLService();
+
+            foreach (Student item in students)
+            {
+                db.AddStudent(item);
+            }
+
+            foreach(Administrator item in administrators)
+            {
+                db.AddAdministrator(item);
+            }
         }
 
         static List<User> ReadFile(string filePath)

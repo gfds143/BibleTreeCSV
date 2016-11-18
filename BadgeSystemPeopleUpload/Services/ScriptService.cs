@@ -19,8 +19,22 @@ namespace BibleTree.Services {
 		}
 
 		public static void Execute(IDbConnection db, string name, Object thing = null) {
-			string script = Scripts[name];
-			if (script != null) {
+            //string script = Scripts[name];
+
+            string script = null;
+
+            script = File.ReadAllText(@"..\..\Services\SQL\" + name + ".sql");
+
+            //if (name.ToLower() == "administrator_insert")
+            //{
+            //    script = File.ReadAllText(@"..\..\Services\SQL\Administrator_Insert.sql");
+            //}
+            //else if (name.ToLower() == "student_insert")
+            //{
+            //    script = File.ReadAllText(@"..\..\Services\SQL\Student_Insert.sql");
+            //}
+
+            if (script != null) {
 				List<string> commands = Regex.Split(script, @"^\s*GO\s*$",
 					RegexOptions.Multiline | RegexOptions.IgnoreCase).ToList();
 				db.Open();

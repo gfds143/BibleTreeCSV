@@ -45,7 +45,8 @@ namespace BibleTree.Services {
 		}
 		public void Drop() {
 			using (var db = noDatabaseConnect()) {
-				db.Execute(ScriptService.Scripts["database_drop"]);
+                //db.Execute(ScriptService.Scripts["database_drop"]);
+                ScriptService.Execute(db, "database_drop");
 			}
 		}
 		public void Create() {

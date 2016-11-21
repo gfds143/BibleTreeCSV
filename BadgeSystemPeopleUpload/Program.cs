@@ -67,12 +67,16 @@ namespace BadgeSystemPeopleUpload
             foreach (Student item in students)
             {
                 db.AddStudent(item);
+                Console.WriteLine("Added Student :{0}", item);
             }
 
             foreach(Administrator item in administrators)
             {
                 db.AddAdministrator(item);
+                Console.WriteLine("Added Admin :{0}", item);
             }
+
+            Console.WriteLine("Finished Running");
         }
 
         static List<User> ReadFile(string filePath)

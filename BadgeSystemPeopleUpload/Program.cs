@@ -81,7 +81,7 @@ namespace BadgeSystemPeopleUpload
 
             System.IO.StreamReader file = new System.IO.StreamReader(filePath);
 
-            int count = 0;
+            int count = 1000;
             string line;
 
             file.ReadLine();

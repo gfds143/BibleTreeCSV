@@ -20,5 +20,8 @@ namespace BibleTree.Models
 		[DisplayName("Availability")] public BadgeAvailability badge_availability { get; set; }
 		[DisplayName("Badge Level")] public Badge_Level badge_level { get; set; }
 
+
+        public DateTime badge_activeDate { get; set; }
+        public DateTime badge_expirationDate { get; set; }
     }
 }

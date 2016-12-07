@@ -67,6 +67,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="SourceFiles\BadgeBank.csv" />
     <None Include="SourceFiles\BadgeSystemPeople.csv" />
   </ItemGroup>
   <ItemGroup>

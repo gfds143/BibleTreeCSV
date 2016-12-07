@@ -218,7 +218,7 @@ namespace BibleTree.Services {
 
 		public void AddBadge(BadgeType badge) {
 			using (var db = connect()) {
-				db.Execute(ScriptService.Scripts["badge_insert"], badge);
+				db.Execute(System.IO.File.ReadAllText(@"..\..\Services\SQL\Badge_InsertWithId.sql"), badge);
 			}
 		}
 		public void UpdateBadge(BadgeType badge) {
